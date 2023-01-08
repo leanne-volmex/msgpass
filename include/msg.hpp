@@ -1,3 +1,4 @@
+#pragma once
 
 #include<cstring>
 #include<unordered_map>
@@ -11,7 +12,11 @@
 #include <netinet/in.h> // for the sockaddr_in structure
 #include <arpa/inet.h> // for the inet_ntoa function
 #include <unistd.h> // for the close function
-#include "../lib/nlohmann/json.hpp"
+//#include "../lib/nlohmann/json.hpp"
+#include <nlohmann/json.hpp>
+
+
+
 
 using std::string;
 using std::to_string;

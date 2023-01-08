@@ -2,6 +2,8 @@
 #include<boost/asio.hpp>
 #include<fmt/core.h>
 
+#include "../include/server.h"
+
 #include<iostream>
 int main()
 {
@@ -35,6 +37,14 @@ int main()
     } catch (const std::exception& e) {
         std::cerr << e.what() << std::endl;
     }
+
+
+    boost::asio::io_context io_context;
+    server srv(io_context, 15001);
+    srv.async_accept();
+    io_context.run();
+
+
 
     return 0;
 }

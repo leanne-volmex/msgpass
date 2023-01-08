@@ -17,12 +17,12 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(boost)
 
 # nlohmann json
-# FetchContent_Declare(
-#   nlohmann_json
-#   GIT_REPOSITORY https://github.com/nlohmann/json.git
-#   GIT_TAG v3.9.1
-# )
-# FetchContent_MakeAvailable(nlohmann_json)
+FetchContent_Declare(
+  nlohmann_json
+  GIT_REPOSITORY https://github.com/nlohmann/json.git
+  GIT_TAG v3.10.5
+)
+FetchContent_MakeAvailable(nlohmann_json)
 
 # fmt
 
@@ -42,7 +42,7 @@ include_directories(include)
 # Build executable
 add_executable(MyMsg src/main.cpp)
 
-target_link_libraries(MyMsg Boost::asio fmt::fmt)
+target_link_libraries(MyMsg Boost::asio fmt::fmt nlohmann_json::nlohmann_json)
 
 message("")
 message("configuration:        ${CMAKE_BUILD_TYPE}")
